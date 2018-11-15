@@ -5,8 +5,17 @@ RUN apt-get update
 RUN mkdir /data RUN mkdir /notebooks
 RUN mkdir /tmp/tflearn_logs
 
-RUN pip install jupyter
-
+# Dependencies
+RUN pip --no-cache-dir install \
+        Pillow \
+        numpy \
+        jupyter \
+        matplotlib \
+        pandas \
+        scipy \
+        sklearn \
+        tensorflow\
+        keras
 
 VOLUME ["/data", "/notebooks", '/tmp/tflearn_logs']
 
