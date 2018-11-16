@@ -2,8 +2,8 @@ FROM python:3.5.3-onbuild
 
 RUN apt-get update
 
-RUN mkdir /data RUN mkdir /notebooks
-RUN mkdir /tmp/tflearn_logs
+RUN mkdir /data 
+RUN mkdir /notebook
 
 # Dependencies
 RUN pip --no-cache-dir install \
@@ -17,7 +17,7 @@ RUN pip --no-cache-dir install \
         tensorflow\
         keras
 
-VOLUME ["/data", "/notebooks", '/tmp/tflearn_logs']
+VOLUME ["/data", "/notebook"]
 
 # for jupyter
 EXPOSE 8888
